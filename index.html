@@ -100,17 +100,7 @@
 <h4 id="1-9-样例2输出"><a href="#1-9-样例2输出" class="headerlink" title="1.9 样例2输出"></a>1.9 样例2输出</h4><p>77164040</p>
 <h4 id="1-10-样例3输入"><a href="#1-10-样例3输入" class="headerlink" title="1.10 样例3输入"></a>1.10 样例3输入</h4><p>66666</p>
 <h4 id="1-11-样例3输出"><a href="#1-11-样例3输出" class="headerlink" title="1.11 样例3输出"></a>1.11 样例3输出</h4><p>526091567</p>
-<h4 id="1-12-子任务"><a href="#1-12-子任务" class="headerlink" title="1.12 子任务"></a>1.12 子任务</h4><p>测试点编号</p>
-<p>1    n≤10</p>
-<p>2    n≤50</p>
-<p>3    n≤100</p>
-<p>4    n≤1000</p>
-<p>5    n≤5000</p>
-<p>6    n≤20000</p>
-<p>7    n≤50000</p>
-<p>8    n≤80000</p>
-<p>9    n≤90000</p>
-<p>10   n≤100000</p>
+<h4 id="1-12-子任务"><a href="#1-12-子任务" class="headerlink" title="1.12 子任务"></a>1.12 子任务</h4><p><img src="https://s2.ax1x.com/2019/08/16/mmEbDJ.png" alt></p>
 <h1 id="T1解法"><a href="#T1解法" class="headerlink" title="T1解法"></a>T1解法</h1><p>这题我考试得了50分</p>
 <h4 id="1-50分做法"><a href="#1-50分做法" class="headerlink" title="1.50分做法"></a>1.50分做法</h4><p>令 f[i][j] 为将 i 拆成若干个大于等于 j 的数的方案数</p>
 <p>不难得出 f[i][j]=f[i-j][j]+f[i][j+1]</p>
@@ -124,12 +114,13 @@
 <p>两式结合，可以得到:<img src="https://s2.ax1x.com/2019/08/16/mmEE1U.png" alt></p>
 <p>那先处理出五边形数，然后递推即可</p>
 <p>上代码~ ~ ~:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> n,f5[<span class="number">200010</span>],f[<span class="number">200010</span>]=&#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">long</span> <span class="keyword">long</span> mod=<span class="number">998244353</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	freopen(<span class="string">"money.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"money.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i=<span class="number">0</span>;i&lt;=<span class="number">100000</span>;i++)&#123;</span><br><span class="line">		f5[<span class="number">2</span>*i]=i*(<span class="number">3</span>*i<span class="number">-1</span>)/<span class="number">2</span>;</span><br><span class="line">		f5[<span class="number">2</span>*i+<span class="number">1</span>]=i*(<span class="number">3</span>*i+<span class="number">1</span>)/<span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">3</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">2</span>;f5[j]&lt;=i;j++)&#123;</span><br><span class="line">			<span class="keyword">if</span>(j&amp;<span class="number">2</span>) f[i]=(f[i]+f[i-f5[j]])%mod;</span><br><span class="line">			<span class="keyword">else</span> f[i]=(f[i]-f[i-f5[j]]+mod)%mod;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld"</span>,f[n]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>T2,T3待更</p>
+<h1 id="T2检阅"><a href="#T2检阅" class="headerlink" title="T2检阅"></a>T2检阅</h1><p>懒得打了，直接截图<br><img src="https://s2.ax1x.com/2019/08/16/mmVCKe.png" alt><br><img src="https://s2.ax1x.com/2019/08/16/mmVNxU.png" alt><br><img src="https://s2.ax1x.com/2019/08/16/mmVYGV.png" alt></p>
+<h1 id="T3大哥"><a href="#T3大哥" class="headerlink" title="T3大哥"></a>T3大哥</h1><p><img src="https://s2.ax1x.com/2019/08/16/mmVOsg.png" alt><br><img src="https://s2.ax1x.com/2019/08/16/mmVLQS.png" alt><br><img src="https://s2.ax1x.com/2019/08/16/mmVbz8.png" alt></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/16/8-16比赛笔记/" data-id="cjze1umtd00041cv1dx00d9le" class="article-share-link">Share</a>
+      <a data-url="http://BilyHurington.github.io/2019/08/16/8-16比赛笔记/" data-id="cjze2boak0004zkv1gv25cc5d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li></ul>
@@ -175,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/15/【学习笔记】动态开点权值线段树/" data-id="cjze1umt500011cv1ttyswgok" class="article-share-link">Share</a>
+      <a data-url="http://BilyHurington.github.io/2019/08/15/【学习笔记】动态开点权值线段树/" data-id="cjze2boaf0002zkv10nvzwinl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
@@ -222,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/14/题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】/" data-id="cjze1umt800021cv1ch80zsak" class="article-share-link">Share</a>
+      <a data-url="http://BilyHurington.github.io/2019/08/14/题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】/" data-id="cjze2boac0001zkv1yxnnf9qr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学/">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
@@ -269,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/14/hello-world/" data-id="cjze1umsy00001cv1gqkm5u56" class="article-share-link">Share</a>
+      <a data-url="http://BilyHurington.github.io/2019/08/14/hello-world/" data-id="cjze2bo9q0000zkv17heetys3" class="article-share-link">Share</a>
       
       
     </footer>
