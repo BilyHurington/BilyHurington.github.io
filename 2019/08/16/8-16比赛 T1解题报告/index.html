@@ -7,22 +7,22 @@
   
   <title>8-16比赛 T1解题报告 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="T1 奖金1.1 序言小H是一个很有钱的男人，所以他为了体现自己的富有并且回馈小弟对自己忠诚，决定给小弟们发奖金 1.2 题目描述小H有n元钱，10^(10^10)个小弟。他要把这些钱全部发给他的小弟。他决定按照小弟对自己的忠诚度(每一个小弟的忠诚度不同)分发奖金，显然忠诚度高的小弟分到的钱不会低于忠诚度底的小弟。 每一个小弟分到的钱一定是非负整数，可以 有小弟没分到钱 小H现在想知道一共有多少">
+  <meta name="description" content="T1 奖金1.1 序言小H是一个很有钱的男人，所以他为了体现自己的富有并且回馈小弟对自己忠诚，决定给小弟们发奖金 1.2 题目描述小H有n元钱，10^(10^10)个小弟。他要把这些钱全部发给他的小弟。他决定按照小弟对自己的忠诚度(每一个小弟的忠诚度不同)分发奖金，显然忠诚度高的小弟分到的钱不会低于忠诚度底的小弟。">
 <meta name="keywords" content="比赛订正,题解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="8-16比赛 T1解题报告">
 <meta property="og:url" content="http://BilyHurington.github.io/2019/08/16/8-16比赛 T1解题报告/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="T1 奖金1.1 序言小H是一个很有钱的男人，所以他为了体现自己的富有并且回馈小弟对自己忠诚，决定给小弟们发奖金 1.2 题目描述小H有n元钱，10^(10^10)个小弟。他要把这些钱全部发给他的小弟。他决定按照小弟对自己的忠诚度(每一个小弟的忠诚度不同)分发奖金，显然忠诚度高的小弟分到的钱不会低于忠诚度底的小弟。 每一个小弟分到的钱一定是非负整数，可以 有小弟没分到钱 小H现在想知道一共有多少">
+<meta property="og:description" content="T1 奖金1.1 序言小H是一个很有钱的男人，所以他为了体现自己的富有并且回馈小弟对自己忠诚，决定给小弟们发奖金 1.2 题目描述小H有n元钱，10^(10^10)个小弟。他要把这些钱全部发给他的小弟。他决定按照小弟对自己的忠诚度(每一个小弟的忠诚度不同)分发奖金，显然忠诚度高的小弟分到的钱不会低于忠诚度底的小弟。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/16/mmEbDJ.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/16/mmkNxe.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/16/mmA3Lj.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/16/mmEE1U.png">
-<meta property="og:updated_time" content="2019-08-17T09:29:29.284Z">
+<meta property="og:updated_time" content="2019-08-17T11:16:00.584Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8-16比赛 T1解题报告">
-<meta name="twitter:description" content="T1 奖金1.1 序言小H是一个很有钱的男人，所以他为了体现自己的富有并且回馈小弟对自己忠诚，决定给小弟们发奖金 1.2 题目描述小H有n元钱，10^(10^10)个小弟。他要把这些钱全部发给他的小弟。他决定按照小弟对自己的忠诚度(每一个小弟的忠诚度不同)分发奖金，显然忠诚度高的小弟分到的钱不会低于忠诚度底的小弟。 每一个小弟分到的钱一定是非负整数，可以 有小弟没分到钱 小H现在想知道一共有多少">
+<meta name="twitter:description" content="T1 奖金1.1 序言小H是一个很有钱的男人，所以他为了体现自己的富有并且回馈小弟对自己忠诚，决定给小弟们发奖金 1.2 题目描述小H有n元钱，10^(10^10)个小弟。他要把这些钱全部发给他的小弟。他决定按照小弟对自己的忠诚度(每一个小弟的忠诚度不同)分发奖金，显然忠诚度高的小弟分到的钱不会低于忠诚度底的小弟。">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/08/16/mmEbDJ.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -95,9 +95,9 @@
         <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></p>
 <h1 id="T1-奖金"><a href="#T1-奖金" class="headerlink" title="T1 奖金"></a>T1 奖金</h1><h4 id="1-1-序言"><a href="#1-1-序言" class="headerlink" title="1.1 序言"></a>1.1 序言</h4><p>小H是一个很有钱的男人，所以他为了体现自己的富有并且回馈小弟对自己忠诚，决定给小弟们发奖金</p>
 <h4 id="1-2-题目描述"><a href="#1-2-题目描述" class="headerlink" title="1.2 题目描述"></a>1.2 题目描述</h4><p>小H有n元钱，10^(10^10)个小弟。他要把这些钱全部发给他的小弟。他决定按照小弟对自己的忠诚度(每一个小弟的忠诚度不同)分发奖金，显然忠诚度高的小弟分到的钱不会低于忠诚度底的小弟。</p>
+<a id="more"></a>
 <p>每一个小弟分到的钱一定是非负整数，可以 有小弟没分到钱 小H现在想知道一共有多少种分发奖金的方案，两种方案被认为是不同的当且 仅当存在一个小弟在两种方案中得到的钱不同。</p>
 <p>由于小H有很多社交活动，没有时间去计算方案数，所以他把这个问题丢给你来解决，输出的方案数对998244353取模</p>
-<a id="more"></a>
 <h4 id="1-3-输入格式"><a href="#1-3-输入格式" class="headerlink" title="1.3 输入格式"></a>1.3 输入格式</h4><p>从文件money.in中读入数据. 一行仅包含一个正整数n，表示小H拥有的钱</p>
 <h4 id="1-4-输出格式"><a href="#1-4-输出格式" class="headerlink" title="1.4 输出格式"></a>1.4 输出格式</h4><p>输出到文件money.out中. 输出一行包含一个整数，表示分发奖金的方案数</p>
 <h4 id="1-5-样例1输入"><a href="#1-5-样例1输入" class="headerlink" title="1.5 样例1输入"></a>1.5 样例1输入</h4><p>4</p>
@@ -126,7 +126,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/16/8-16比赛 T1解题报告/" data-id="cjzffydtq0001mkv1tqjypp29" class="article-share-link">Share</a>
+      <a data-url="http://BilyHurington.github.io/2019/08/16/8-16比赛 T1解题报告/" data-id="cjzfg53yu000074v1ebnbnzcv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
@@ -213,10 +213,6 @@
         
           <li>
             <a href="/2019/08/14/题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】/">题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/14/hello-world/">Hello World</a>
           </li>
         
       </ul>
