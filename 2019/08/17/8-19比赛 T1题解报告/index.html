@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>8-19比赛 T1解题报告 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="T1 中间值（median） T1题解这题第一眼看上去的时候像个SB二分题 然而。。。。。。 看到数据范围后一秒自闭，二分TM有两个log啊 考试的时候我就70分滚粗了">
+<meta name="keywords" content="比赛订正,题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8-19比赛 T1解题报告">
+<meta property="og:url" content="http://BilyHurington.github.io/2019/08/17/8-19比赛 T1题解报告/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="T1 中间值（median） T1题解这题第一眼看上去的时候像个SB二分题 然而。。。。。。 看到数据范围后一秒自闭，二分TM有两个log啊 考试的时候我就70分滚粗了">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/19/m3fKr8.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/19/m3fmxP.png">
+<meta property="og:updated_time" content="2019-08-19T12:51:35.380Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="8-19比赛 T1解题报告">
+<meta name="twitter:description" content="T1 中间值（median） T1题解这题第一眼看上去的时候像个SB二分题 然而。。。。。。 看到数据范围后一秒自闭，二分TM有两个log啊 考试的时候我就70分滚粗了">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/19/m3fKr8.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://BilyHurington.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-8-19比赛 T1题解报告" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/17/8-19比赛 T1题解报告/" class="article-date">
+  <time datetime="2019-08-16T16:00:00.000Z" itemprop="datePublished">2019-08-17</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      8-19比赛 T1解题报告
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="T1-中间值（median）"><a href="#T1-中间值（median）" class="headerlink" title="T1 中间值（median）"></a>T1 中间值（median）</h1><p><img src="https://s2.ax1x.com/2019/08/19/m3fKr8.png" alt><br><img src="https://s2.ax1x.com/2019/08/19/m3fmxP.png" alt></p>
+<h1 id="T1题解"><a href="#T1题解" class="headerlink" title="T1题解"></a>T1题解</h1><p>这题第一眼看上去的时候像个<del>SB</del>二分题</p>
+<p>然而。。。。。。</p>
+<p>看到数据范围后一秒自闭，二分<del>TM</del>有两个log啊</p>
+<p>考试的时候我就70分滚粗了</p>
+<a id="more"></a>
+<h3 id="一，70分做法"><a href="#一，70分做法" class="headerlink" title="一，70分做法"></a>一，70分做法</h3><p>二分答案的权值，然后因为a,b两个序列都是有序的</p>
+<p>所以在两个序列里分别二分，找出有多少个数小于二分的这个权值检验</p>
+<p>时间复杂度O(m*log(n)^2)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,a[<span class="number">500010</span>],b[<span class="number">500010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ri</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">char</span> c = getchar(); <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">for</span>(;c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>; c = getchar());</span><br><span class="line"> <span class="keyword">for</span>(;c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>; c = getchar()) x = x * <span class="number">10</span> - <span class="string">'0'</span> + c; <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">finda</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> l=x<span class="number">-1</span>,r=y,mid;</span><br><span class="line">	<span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">		mid=(l+r+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(a[mid]&gt;k) r=mid<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">else</span> l=mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l-x+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findb</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> l=x<span class="number">-1</span>,r=y,mid;</span><br><span class="line">	<span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">		mid=(l+r+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(b[mid]&gt;k) r=mid<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">else</span> l=mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l-x+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	freopen(<span class="string">"median.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"median.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	n=ri();m=ri();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) a[i]=ri();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) b[i]=ri();</span><br><span class="line">	<span class="keyword">int</span> opt,x,y,z,k,l,r,mid,need;</span><br><span class="line">	<span class="keyword">while</span>(m--)&#123;</span><br><span class="line">		opt=ri();x=ri();y=ri();z=ri();</span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(x) b[y]=z;</span><br><span class="line">			<span class="keyword">else</span> a[y]=z;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			k=ri();</span><br><span class="line">			l=<span class="number">0</span>;r=<span class="number">1e9</span>;need=(y-x+k-z+<span class="number">3</span>)/<span class="number">2</span>;</span><br><span class="line">			<span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">				mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(finda(mid,x,y)+findb(mid,z,k)&gt;=need) r=mid;</span><br><span class="line">				<span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,l);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="二，100分做法"><a href="#二，100分做法" class="headerlink" title="二，100分做法"></a>二，100分做法</h3><p>我们定义一个函数为query(l1,r1,l2,r2,k)</p>
+<p>即求a[l1,r1]和b[l2,r2]合起来后第k大</p>
+<p>那我们取一个x=min(k/2,r1-l1+1)和y=k-x</p>
+<p>如果a[l1+x-1]&lt;b[l2+y-1]，那a[l1]-a[l1+x-1]就不可能成为第k大</p>
+<p>则我们可以递归下去，return query(l1+x,r2,l2,r2,k-x)</p>
+<p>如果是a[l1+x-1]&gt;=b[l2+y-1]，同理</p>
+<p>这样我们就得到了一个O(m*log(n))的算法</p>
+<p>据说还有一种 通过当前数的位置得到这个数在另一个序列的期望位置 的做法</p>
+<p>但看我这么弱，怎么可能会</p>
+<p>上代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,a[<span class="number">500010</span>],b[<span class="number">500010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">solve</span><span class="params">(<span class="keyword">int</span>*a,<span class="keyword">int</span> l1,<span class="keyword">int</span>*b,<span class="keyword">int</span> l2,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(l1&gt;l2) <span class="keyword">return</span> solve(b,l2,a,l1,k);</span><br><span class="line">	<span class="keyword">if</span>(k==<span class="number">1</span>) <span class="keyword">return</span> min(a[<span class="number">1</span>],b[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">if</span>(!l1) <span class="keyword">return</span> b[k];</span><br><span class="line">	<span class="keyword">int</span> x=min(k/<span class="number">2</span>,l1),y=k-x;</span><br><span class="line">	<span class="keyword">if</span>(a[x]&lt;b[y]) <span class="keyword">return</span> solve(a+x,l1-x,b,l2,k-x);</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">return</span> solve(a,l1,b+y,l2-y,k-y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	freopen(<span class="string">"median.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"median.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b[i]);</span><br><span class="line">	<span class="keyword">int</span> opt,x,y,z,k;</span><br><span class="line">	<span class="keyword">while</span>(m--)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d %d %d %d"</span>,&amp;opt,&amp;x,&amp;y,&amp;z);</span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(x==<span class="number">1</span>) b[y]=z;</span><br><span class="line">			<span class="keyword">else</span> a[y]=z;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;k);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,solve(a+x<span class="number">-1</span>,y-x+<span class="number">1</span>,b+z<span class="number">-1</span>,k-z+<span class="number">1</span>,(y-x+k-z+<span class="number">3</span>)/<span class="number">2</span>));</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>完结撒花</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://BilyHurington.github.io/2019/08/17/8-19比赛 T1题解报告/" data-id="cjziei40l0000jov1wdwe3s6l" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/17/8-17比赛 T1解题报告/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">8-17比赛 T1解题报告</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a> <a href="/tags/比赛订正/" style="font-size: 15px;">比赛订正</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/17/8-19比赛 T1题解报告/">8-19比赛 T1解题报告</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/17/8-17比赛 T1解题报告/">8-17比赛 T1解题报告</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/17/8-17比赛 T2解题报告/">8-17比赛 T2解题报告</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/16/8-16比赛 T1解题报告/">8-16比赛 T1解题报告</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/15/【学习笔记】动态开点权值线段树/">【学习笔记】动态开点权值线段树</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 BilyHurington<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
