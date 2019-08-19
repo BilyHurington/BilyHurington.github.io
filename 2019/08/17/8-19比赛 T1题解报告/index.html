@@ -7,20 +7,20 @@
   
   <title>8-19比赛 T1解题报告 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="T1 中间值（median） T1题解这题第一眼看上去的时候像个SB二分题 然而。。。。。。 看到数据范围后一秒自闭，二分TM有两个log啊 考试的时候我就70分滚粗了">
+  <meta name="description" content="T1 中间值(median)">
 <meta name="keywords" content="比赛订正,题解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="8-19比赛 T1解题报告">
 <meta property="og:url" content="http://BilyHurington.github.io/2019/08/17/8-19比赛 T1题解报告/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="T1 中间值（median） T1题解这题第一眼看上去的时候像个SB二分题 然而。。。。。。 看到数据范围后一秒自闭，二分TM有两个log啊 考试的时候我就70分滚粗了">
+<meta property="og:description" content="T1 中间值(median)">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/19/m3fKr8.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/19/m3fmxP.png">
-<meta property="og:updated_time" content="2019-08-19T12:51:35.380Z">
+<meta property="og:updated_time" content="2019-08-19T13:09:52.713Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8-19比赛 T1解题报告">
-<meta name="twitter:description" content="T1 中间值（median） T1题解这题第一眼看上去的时候像个SB二分题 然而。。。。。。 看到数据范围后一秒自闭，二分TM有两个log啊 考试的时候我就70分滚粗了">
+<meta name="twitter:description" content="T1 中间值(median)">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/08/19/m3fKr8.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -90,12 +90,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="T1-中间值（median）"><a href="#T1-中间值（median）" class="headerlink" title="T1 中间值（median）"></a>T1 中间值（median）</h1><p><img src="https://s2.ax1x.com/2019/08/19/m3fKr8.png" alt><br><img src="https://s2.ax1x.com/2019/08/19/m3fmxP.png" alt></p>
+        <h1 id="T1-中间值-median"><a href="#T1-中间值-median" class="headerlink" title="T1 中间值(median)"></a>T1 中间值(median)</h1><p><img src="https://s2.ax1x.com/2019/08/19/m3fKr8.png" alt><br><a id="more"></a><br><img src="https://s2.ax1x.com/2019/08/19/m3fmxP.png" alt></p>
 <h1 id="T1题解"><a href="#T1题解" class="headerlink" title="T1题解"></a>T1题解</h1><p>这题第一眼看上去的时候像个<del>SB</del>二分题</p>
 <p>然而。。。。。。</p>
 <p>看到数据范围后一秒自闭，二分<del>TM</del>有两个log啊</p>
 <p>考试的时候我就70分滚粗了</p>
-<a id="more"></a>
 <h3 id="一，70分做法"><a href="#一，70分做法" class="headerlink" title="一，70分做法"></a>一，70分做法</h3><p>二分答案的权值，然后因为a,b两个序列都是有序的</p>
 <p>所以在两个序列里分别二分，找出有多少个数小于二分的这个权值检验</p>
 <p>时间复杂度O(m*log(n)^2)<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,a[<span class="number">500010</span>],b[<span class="number">500010</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">ri</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> <span class="keyword">char</span> c = getchar(); <span class="keyword">int</span> x = <span class="number">0</span>; <span class="keyword">for</span>(;c &lt; <span class="string">'0'</span> || c &gt; <span class="string">'9'</span>; c = getchar());</span><br><span class="line"> <span class="keyword">for</span>(;c &gt;= <span class="string">'0'</span> &amp;&amp; c &lt;= <span class="string">'9'</span>; c = getchar()) x = x * <span class="number">10</span> - <span class="string">'0'</span> + c; <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">finda</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> l=x<span class="number">-1</span>,r=y,mid;</span><br><span class="line">	<span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">		mid=(l+r+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(a[mid]&gt;k) r=mid<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">else</span> l=mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l-x+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">findb</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> l=x<span class="number">-1</span>,r=y,mid;</span><br><span class="line">	<span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">		mid=(l+r+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(b[mid]&gt;k) r=mid<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">else</span> l=mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> l-x+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	freopen(<span class="string">"median.in"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"median.out"</span>,<span class="string">"w"</span>,<span class="built_in">stdout</span>);</span><br><span class="line">	n=ri();m=ri();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) a[i]=ri();</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) b[i]=ri();</span><br><span class="line">	<span class="keyword">int</span> opt,x,y,z,k,l,r,mid,need;</span><br><span class="line">	<span class="keyword">while</span>(m--)&#123;</span><br><span class="line">		opt=ri();x=ri();y=ri();z=ri();</span><br><span class="line">		<span class="keyword">if</span>(opt==<span class="number">1</span>)&#123;</span><br><span class="line">			<span class="keyword">if</span>(x) b[y]=z;</span><br><span class="line">			<span class="keyword">else</span> a[y]=z;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span>&#123;</span><br><span class="line">			k=ri();</span><br><span class="line">			l=<span class="number">0</span>;r=<span class="number">1e9</span>;need=(y-x+k-z+<span class="number">3</span>)/<span class="number">2</span>;</span><br><span class="line">			<span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">				mid=(l+r)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>(finda(mid,x,y)+findb(mid,z,k)&gt;=need) r=mid;</span><br><span class="line">				<span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"%d\n"</span>,l);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -114,7 +113,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/17/8-19比赛 T1题解报告/" data-id="cjziei40l0000jov1wdwe3s6l" class="article-share-link">Share</a>
+      <a data-url="http://BilyHurington.github.io/2019/08/17/8-19比赛 T1题解报告/" data-id="cjzig6rbr0008oov1u7l0sf9w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
@@ -125,10 +124,19 @@
     
 <nav id="article-nav">
   
+    <a href="/2019/08/17/8-17比赛 T2解题报告/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          8-17比赛 T2解题报告
+        
+      </div>
+    </a>
   
-    <a href="/2019/08/17/8-17比赛 T1解题报告/" id="article-nav-older" class="article-nav-link-wrap">
+  
+    <a href="/2019/08/16/8-16比赛 T1解题报告/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">8-17比赛 T1解题报告</div>
+      <div class="article-nav-title">8-16比赛 T1解题报告</div>
     </a>
   
 </nav>
@@ -179,11 +187,11 @@
       <ul>
         
           <li>
-            <a href="/2019/08/17/8-19比赛 T1题解报告/">8-19比赛 T1解题报告</a>
+            <a href="/2019/08/17/8-17比赛 T1解题报告/">8-17比赛 T1解题报告</a>
           </li>
         
           <li>
-            <a href="/2019/08/17/8-17比赛 T1解题报告/">8-17比赛 T1解题报告</a>
+            <a href="/2019/08/17/8-19比赛 T2解题报告/">8-19比赛 T2解题报告</a>
           </li>
         
           <li>
@@ -191,11 +199,11 @@
           </li>
         
           <li>
-            <a href="/2019/08/16/8-16比赛 T1解题报告/">8-16比赛 T1解题报告</a>
+            <a href="/2019/08/17/8-19比赛 T1题解报告/">8-19比赛 T1解题报告</a>
           </li>
         
           <li>
-            <a href="/2019/08/15/【学习笔记】动态开点权值线段树/">【学习笔记】动态开点权值线段树</a>
+            <a href="/2019/08/16/8-16比赛 T1解题报告/">8-16比赛 T1解题报告</a>
           </li>
         
       </ul>
@@ -237,5 +245,21 @@
 
 
   </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
