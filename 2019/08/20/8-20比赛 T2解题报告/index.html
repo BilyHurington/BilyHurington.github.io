@@ -7,21 +7,21 @@
   
   <title>8-20比赛 T2解题报告 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="T2 快速排序 T2题解这题我在考场上A了，我这几天唯一A了的题QAQ 这题一看上去很难，但仔细看时并不难 只是把几个问题套在一起了而已 首先来看最大值 不难发现最大值一定是后面的n个减去前面的n的 容易发现最小值为所有l+2  i 位的数减去所有l+2  i-1位的数 这两个都可以用线段树维护 再来看方案数 如果存在一个j，使得j前面t数组比s数组的数多，则一定会矛盾 所以实际上方案数就和括号序">
+  <meta name="description" content="T2 快速排序">
 <meta name="keywords" content="比赛订正,题解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="8-20比赛 T2解题报告">
-<meta property="og:url" content="http://BilyHurington.github.io/2019/08/20/8-20比赛 T2 解题报告/index.html">
+<meta property="og:url" content="http://BilyHurington.github.io/2019/08/20/8-20比赛 T2解题报告/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="T2 快速排序 T2题解这题我在考场上A了，我这几天唯一A了的题QAQ 这题一看上去很难，但仔细看时并不难 只是把几个问题套在一起了而已 首先来看最大值 不难发现最大值一定是后面的n个减去前面的n的 容易发现最小值为所有l+2  i 位的数减去所有l+2  i-1位的数 这两个都可以用线段树维护 再来看方案数 如果存在一个j，使得j前面t数组比s数组的数多，则一定会矛盾 所以实际上方案数就和括号序">
+<meta property="og:description" content="T2 快速排序">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/20/mYZ5gU.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/20/mYZ43T.png">
 <meta property="og:image" content="https://s2.ax1x.com/2019/08/20/mYZhCV.png">
-<meta property="og:updated_time" content="2019-08-20T11:24:10.598Z">
+<meta property="og:updated_time" content="2019-08-20T11:28:44.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="8-20比赛 T2解题报告">
-<meta name="twitter:description" content="T2 快速排序 T2题解这题我在考场上A了，我这几天唯一A了的题QAQ 这题一看上去很难，但仔细看时并不难 只是把几个问题套在一起了而已 首先来看最大值 不难发现最大值一定是后面的n个减去前面的n的 容易发现最小值为所有l+2  i 位的数减去所有l+2  i-1位的数 这两个都可以用线段树维护 再来看方案数 如果存在一个j，使得j前面t数组比s数组的数多，则一定会矛盾 所以实际上方案数就和括号序">
+<meta name="twitter:description" content="T2 快速排序">
 <meta name="twitter:image" content="https://s2.ax1x.com/2019/08/20/mYZ5gU.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -69,9 +69,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-8-20比赛 T2 解题报告" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-8-20比赛 T2解题报告" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/20/8-20比赛 T2 解题报告/" class="article-date">
+    <a href="/2019/08/20/8-20比赛 T2解题报告/" class="article-date">
   <time datetime="2019-08-19T16:00:00.000Z" itemprop="datePublished">2019-08-20</time>
 </a>
     
@@ -91,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="T2-快速排序"><a href="#T2-快速排序" class="headerlink" title="T2 快速排序"></a>T2 快速排序</h1><p><img src="https://s2.ax1x.com/2019/08/20/mYZ5gU.png" alt><br><img src="https://s2.ax1x.com/2019/08/20/mYZ43T.png" alt><br><img src="https://s2.ax1x.com/2019/08/20/mYZhCV.png" alt></p>
+        <h1 id="T2-快速排序"><a href="#T2-快速排序" class="headerlink" title="T2 快速排序"></a>T2 快速排序</h1><p><img src="https://s2.ax1x.com/2019/08/20/mYZ5gU.png" alt><br><a id="more"></a><br><img src="https://s2.ax1x.com/2019/08/20/mYZ43T.png" alt><br><img src="https://s2.ax1x.com/2019/08/20/mYZhCV.png" alt></p>
 <h1 id="T2题解"><a href="#T2题解" class="headerlink" title="T2题解"></a>T2题解</h1><p>这题我在考场上A了，我这几天唯一A了的题QAQ</p>
 <p>这题一看上去很难，但仔细看时并不难</p>
 <p>只是把几个问题套在一起了而已</p>
@@ -109,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/20/8-20比赛 T2 解题报告/" data-id="cjzjqu44s00084cv1216wlieq" class="article-share-link">Share</a>
+      <a data-url="http://BilyHurington.github.io/2019/08/20/8-20比赛 T2解题报告/" data-id="cjzjqworq00079sv1dik4q20q" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
@@ -120,19 +120,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/08/20/8-20比赛 T1解题报告/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          8-20比赛 T1解题报告
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/19/8-19比赛 T2解题报告/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/08/20/8-20比赛 T1解题报告/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">8-19比赛 T2解题报告</div>
+      <div class="article-nav-title">8-20比赛 T1解题报告</div>
     </a>
   
 </nav>
@@ -183,19 +174,19 @@
       <ul>
         
           <li>
+            <a href="/2019/08/20/8-20比赛 T2解题报告/">8-20比赛 T2解题报告</a>
+          </li>
+        
+          <li>
             <a href="/2019/08/20/8-20比赛 T1解题报告/">8-20比赛 T1解题报告</a>
           </li>
         
           <li>
-            <a href="/2019/08/20/8-20比赛 T2 解题报告/">8-20比赛 T2解题报告</a>
+            <a href="/2019/08/19/8-19比赛 T1题解报告/">8-19比赛 T1解题报告</a>
           </li>
         
           <li>
             <a href="/2019/08/19/8-19比赛 T2解题报告/">8-19比赛 T2解题报告</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/19/8-19比赛 T1题解报告/">8-19比赛 T1解题报告</a>
           </li>
         
           <li>
