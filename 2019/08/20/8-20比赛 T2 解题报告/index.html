@@ -5,15 +5,24 @@
   
 
   
-  <title>Hexo</title>
+  <title>8-20比赛 T2解题报告 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://BilyHurington.github.io/index.html">
+  <meta name="description" content="T2 快速排序 T2题解这题我在考场上A了，我这几天唯一A了的题QAQ 这题一看上去很难，但仔细看时并不难 只是把几个问题套在一起了而已 首先来看最大值 不难发现最大值一定是后面的n个减去前面的n的 容易发现最小值为所有l+2  i 位的数减去所有l+2  i-1位的数 这两个都可以用线段树维护 再来看方案数 如果存在一个j，使得j前面t数组比s数组的数多，则一定会矛盾 所以实际上方案数就和括号序">
+<meta name="keywords" content="比赛订正,题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="8-20比赛 T2解题报告">
+<meta property="og:url" content="http://BilyHurington.github.io/2019/08/20/8-20比赛 T2 解题报告/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="T2 快速排序 T2题解这题我在考场上A了，我这几天唯一A了的题QAQ 这题一看上去很难，但仔细看时并不难 只是把几个问题套在一起了而已 首先来看最大值 不难发现最大值一定是后面的n个减去前面的n的 容易发现最小值为所有l+2  i 位的数减去所有l+2  i-1位的数 这两个都可以用线段树维护 再来看方案数 如果存在一个j，使得j前面t数组比s数组的数多，则一定会矛盾 所以实际上方案数就和括号序">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/20/mYZ5gU.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/20/mYZ43T.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/08/20/mYZhCV.png">
+<meta property="og:updated_time" content="2019-08-20T11:24:10.598Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="8-20比赛 T2解题报告">
+<meta name="twitter:description" content="T2 快速排序 T2题解这题我在考场上A了，我这几天唯一A了的题QAQ 这题一看上去很难，但仔细看时并不难 只是把几个问题套在一起了而已 首先来看最大值 不难发现最大值一定是后面的n个减去前面的n的 容易发现最小值为所有l+2  i 位的数减去所有l+2  i-1位的数 这两个都可以用线段树维护 再来看方案数 如果存在一个j，使得j前面t数组比s数组的数多，则一定会矛盾 所以实际上方案数就和括号序">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/08/20/mYZ5gU.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -60,9 +69,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-8-20比赛 T2 解题报告" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-8-20比赛 T2 解题报告" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/20/8-20比赛 T2 解题报告/" class="article-date">
   <time datetime="2019-08-19T16:00:00.000Z" itemprop="datePublished">2019-08-20</time>
@@ -75,8 +82,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/20/8-20比赛 T2 解题报告/">8-20比赛 T2解题报告</a>
+    <h1 class="article-title" itemprop="name">
+      8-20比赛 T2解题报告
     </h1>
   
 
@@ -110,357 +117,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-8-20比赛 T1解题报告" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/20/8-20比赛 T1解题报告/" class="article-date">
-  <time datetime="2019-08-19T16:00:00.000Z" itemprop="datePublished">2019-08-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/20/8-20比赛 T1解题报告/">8-20比赛 T1解题报告</a>
-    </h1>
+    <a href="/2019/08/20/8-20比赛 T1解题报告/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">8-20比赛 T1解题报告</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="T1-完全背包"><a href="#T1-完全背包" class="headerlink" title="T1 完全背包"></a>T1 完全背包</h1><p><img src="https://s2.ax1x.com/2019/08/20/mJriFI.png" alt><br>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/20/8-20比赛 T1解题报告/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/20/8-20比赛 T1解题报告/" data-id="cjzjqr56n000anwv1iuwups71" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-8-19比赛 T2解题报告" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/19/8-19比赛 T2解题报告/" class="article-date">
-  <time datetime="2019-08-18T16:00:00.000Z" itemprop="datePublished">2019-08-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/19/8-19比赛 T2解题报告/">8-19比赛 T2解题报告</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="T2-最小值-min"><a href="#T2-最小值-min" class="headerlink" title="T2 最小值(min)"></a>T2 最小值(min)</h1><p><img src="https://s2.ax1x.com/2019/08/19/m3fe2t.png" alt><br>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/19/8-19比赛 T2解题报告/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/19/8-19比赛 T2解题报告/" data-id="cjzjqr56a0001nwv1k6ovjmok" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-8-19比赛 T1题解报告" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/19/8-19比赛 T1题解报告/" class="article-date">
-  <time datetime="2019-08-18T16:00:00.000Z" itemprop="datePublished">2019-08-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/19/8-19比赛 T1题解报告/">8-19比赛 T1解题报告</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="T1-中间值-median"><a href="#T1-中间值-median" class="headerlink" title="T1 中间值(median)"></a>T1 中间值(median)</h1><p><img src="https://s2.ax1x.com/2019/08/19/m3fKr8.png" alt><br>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/19/8-19比赛 T1题解报告/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/19/8-19比赛 T1题解报告/" data-id="cjzjqr56g0005nwv1lx5zqwv0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-8-17比赛 T1解题报告" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/17/8-17比赛 T1解题报告/" class="article-date">
-  <time datetime="2019-08-16T16:00:00.000Z" itemprop="datePublished">2019-08-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/17/8-17比赛 T1解题报告/">8-17比赛 T1解题报告</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="T1祭祀"><a href="#T1祭祀" class="headerlink" title="T1祭祀"></a>T1祭祀</h1><p><img src="https://s2.ax1x.com/2019/08/17/mudjiR.md.png" alt><br>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/17/8-17比赛 T1解题报告/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/17/8-17比赛 T1解题报告/" data-id="cjzjqr5630000nwv1ko2w5ob9" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-8-17比赛 T2解题报告" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/17/8-17比赛 T2解题报告/" class="article-date">
-  <time datetime="2019-08-16T16:00:00.000Z" itemprop="datePublished">2019-08-17</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/17/8-17比赛 T2解题报告/">8-17比赛 T2解题报告</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="T2隐士"><a href="#T2隐士" class="headerlink" title="T2隐士"></a>T2隐士</h1><p><img src="https://s2.ax1x.com/2019/08/17/muoCXF.png" alt><br>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/17/8-17比赛 T2解题报告/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/17/8-17比赛 T2解题报告/" data-id="cjzjqr56f0004nwv1djfc7u78" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-8-16比赛 T1解题报告" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/16/8-16比赛 T1解题报告/" class="article-date">
-  <time datetime="2019-08-15T16:00:00.000Z" itemprop="datePublished">2019-08-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/16/8-16比赛 T1解题报告/">8-16比赛 T1解题报告</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script></p>
-<h1 id="T1-奖金"><a href="#T1-奖金" class="headerlink" title="T1 奖金"></a>T1 奖金</h1><h4 id="1-1-序言"><a href="#1-1-序言" class="headerlink" title="1.1 序言"></a>1.1 序言</h4><p>小H是一个很有钱的男人，所以他为了体现自己的富有并且回馈小弟对自己忠诚，决定给小弟们发奖金</p>
-<h4 id="1-2-题目描述"><a href="#1-2-题目描述" class="headerlink" title="1.2 题目描述"></a>1.2 题目描述</h4><p>小H有n元钱，10^(10^10)个小弟。他要把这些钱全部发给他的小弟。他决定按照小弟对自己的忠诚度(每一个小弟的忠诚度不同)分发奖金，显然忠诚度高的小弟分到的钱不会低于忠诚度底的小弟。</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/16/8-16比赛 T1解题报告/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/16/8-16比赛 T1解题报告/" data-id="cjzjqr56e0003nwv1i04rzp15" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-【学习笔记】动态开点权值线段树" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/15/【学习笔记】动态开点权值线段树/" class="article-date">
-  <time datetime="2019-08-14T16:00:00.000Z" itemprop="datePublished">2019-08-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/15/【学习笔记】动态开点权值线段树/">【学习笔记】动态开点权值线段树</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h3 id="一，基本介绍"><a href="#一，基本介绍" class="headerlink" title="一，基本介绍"></a>一，基本介绍</h3><h3 id="二，实现过程"><a href="#二，实现过程" class="headerlink" title="二，实现过程"></a>二，实现过程</h3><h3 id="三，代码"><a href="#三，代码" class="headerlink" title="三，代码"></a>三，代码</h3><h3 id="四，pb-ds"><a href="#四，pb-ds" class="headerlink" title="四，pb_ds"></a>四，pb_ds</h3>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/15/【学习笔记】动态开点权值线段树/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/15/【学习笔记】动态开点权值线段树/" data-id="cjzjqr56i0007nwv1gw1io90c" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习笔记/">学习笔记</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/08/14/题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】/" class="article-date">
-  <time datetime="2019-08-14T11:10:07.167Z" itemprop="datePublished">2019-08-14</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/14/题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】/">题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这题不是大水题吗，我随便口胡就做出来了 ——来自<a href="https://www.luogu.org/space/show?uid=112794" target="_blank" rel="noopener">周子衡</a>的嘲讽</p>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/14/题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://BilyHurington.github.io/2019/08/14/题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】/" data-id="cjzjqr56p000cnwv1c0fjckkr" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学/">数学</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
