@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>【学习笔记】动态开点权值线段树 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="LSD模拟赛的题解">
+<meta name="keywords" content="题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【学习笔记】动态开点权值线段树">
+<meta property="og:url" content="http://BilyHurington.github.io/2019/08/14/LSD的模拟赛题解/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="LSD模拟赛的题解">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/03/uwW4Qx.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/03/uwWhS1.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/03/uwW5y6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/03/uwIwrt.png">
+<meta property="og:updated_time" content="2019-10-03T06:12:36.726Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="【学习笔记】动态开点权值线段树">
+<meta name="twitter:description" content="LSD模拟赛的题解">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/10/03/uwW4Qx.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://BilyHurington.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-LSD的模拟赛题解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/08/14/LSD的模拟赛题解/" class="article-date">
+  <time datetime="2019-08-13T16:00:00.000Z" itemprop="datePublished">2019-08-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      【学习笔记】动态开点权值线段树
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="LSD模拟赛的题解"><a href="#LSD模拟赛的题解" class="headerlink" title="LSD模拟赛的题解"></a>LSD模拟赛的题解</h2><a id="more"></a>
+<h3 id="T1"><a href="#T1" class="headerlink" title="T1"></a>T1</h3><p><img src="https://s2.ax1x.com/2019/10/03/uwW4Qx.png" alt></p>
+<h3 id="T1题解"><a href="#T1题解" class="headerlink" title="T1题解"></a>T1题解</h3><p>我们来手玩式子</p>
+<p><strong>i(i+1)=i(i+1)[(i+2)-(i-1)]/3=(i(i+1)(i+2)-(i-1)i(i+1))/3</strong></p>
+<p><strong>所以原式=[-0*1*2+1*2*3-1*2*3+2*3*4 ……-(n-1)*n*(n+1)+n*(n+1)*(n+2)]/3=n*(n+1)*(n+2)/3</strong></p>
+<p>~其实就是个简单的裂项~</p>
+<p>然后就可以直接算了</p>
+<p><strong>还要注意一点,因为n最大是10<sup>9</sup>,全部乘在一起会long long,所以可以找出n,(n+1),(n+2)中是3的倍数的数,先将它除以3,再依次相乘,每乘一步都取模</strong></p>
+<h3 id="T2"><a href="#T2" class="headerlink" title="T2"></a>T2</h3><p><img src="https://s2.ax1x.com/2019/10/03/uwWhS1.png" alt></p>
+<p>即求k=x<sup>3</sup>-y<sup>3</sup>的个数</p>
+<p><strong>y<sup>3</sup>-x<sup>3</sup>=(y-x)*(x<sup>2</sup>+xy+y<sup>2</sup>)</strong></p>
+<p>然后我们可以分析一下</p>
+<p><strong>y-x&gt;0,x<sup>2</sup>+xy+y<sup>2</sup>&gt;0</strong></p>
+<p><strong>(y-x)<sup>2</sup>=x<sup>2</sup>-2xy+y<sup>2</sup><x<sup>2&lt;/sup&gt;+xy+y<sup>2</sup></x<sup></strong></p>
+<p>所以x-y&lt;<sup>3</sup>&radic;<span style="text-decoration:overline">10<sup>18</sup></span>=10<sup>6</sup></p>
+<p>枚举x-y之后检验即可</p>
+<h3 id="T3"><a href="#T3" class="headerlink" title="T3"></a>T3</h3><p><img src="https://s2.ax1x.com/2019/10/03/uwW5y6.png" alt></p>
+<p>~单调队列水题~</p>
+<p>原序列为a<sub>1</sub>~a<sub>n</sub></p>
+<p>令f<sub>i</sub>为前i个数中,选了最后一个数,且满足条件的最小和</p>
+<p>不难推出<strong>f<sub>i</sub>=min{f<sub>j</sub>}+a[i] (i-k≤j&lt;i)</strong></p>
+<p>但这个dp是O(n<sup>2</sup>)</p>
+<p>介绍一下<strong>单调队列</strong></p>
+<pre><code>单调队列有两个性质
+队列中的元素其对应在原来的列表中的顺序必须是单调递增的。
+队列中元素的大小必须具有单调性
+</code></pre><p>看一下这篇<a href="https://www.cnblogs.com/RealMadrid/articles/10599588.html" target="_blank" rel="noopener">博客</a>吧</p>
+<p>然后把单调队列套到这个dp式上就可以了</p>
+<h3 id="T4"><a href="#T4" class="headerlink" title="T4"></a>T4</h3><p><img src="https://s2.ax1x.com/2019/10/03/uwIwrt.png" alt></p>
+<p>这题如果纯暴力的话是O(n<sup>3</sup>)</p>
+<p>我们先想一下询问究竟是查什么</p>
+<p><strong>query(l,r)=&Sigma;{a<sub>i</sub>*(i-l+1)*(r-i+1)}(l≤i≤r)</strong></p>
+<p>这样我们就O(n<sup>2</sup>)</p>
+<p>先学习一下<a href="https://www.cnblogs.com/cn-suqingnian/p/9302143.html" target="_blank" rel="noopener">分块</a></p>
+<p>然后我们想想怎么将连续两块的信息合并到一起</p>
+<p><strong>对(l,r)的块,我们保存五个信息sum(这段的总和),length(r-l+1),lsum(length*a<sub>l</sub>+(length-1)*a<sub>l+1</sub>+……+a<sub>r</sub>),rsum(length*a<sub>r</sub>+(length-1)*a<sub>r-1</sub>+……+a<sub>l</sub>),ans(这段的答案)</strong></p>
+<p>这样我们可以写出一个合并的函数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">node <span class="title">merge</span><span class="params">(node x,node y)</span></span>&#123;</span><br><span class="line">    node ans;</span><br><span class="line">    ans.clear();</span><br><span class="line">    ans.lsum=md(x.lsum+(<span class="keyword">long</span> <span class="keyword">long</span>)x.sum*y.length%mod+y.lsum);</span><br><span class="line">    ans.rsum=md(y.rsum+(<span class="keyword">long</span> <span class="keyword">long</span>)y.sum*x.length%mod+x.rsum);</span><br><span class="line">    ans.sum=md(x.sum+y.sum);</span><br><span class="line">    ans.length=x.length+y.length;</span><br><span class="line">    ans.ans=md(x.ans+y.ans+(<span class="keyword">long</span> <span class="keyword">long</span>)x.rsum*y.length%mod+(<span class="keyword">long</span> <span class="keyword">long</span>)y.lsum*x.length%mod);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样我们的复杂度就是<strong>O(m*siz+m*n/siz)</strong>,siz为块的大小</p>
+<p>当<strong>m取&radic;n</strong>时最优</p>
+<p>时间复杂度<strong>O(n&radic;n)</strong></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://BilyHurington.github.io/2019/08/14/LSD的模拟赛题解/" data-id="ck1ab000d00045gv1p5tun023" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/08/14/题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          题解 P5497 【[LnOI2019SP]龟速单项式变换(SMT)】
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/比赛订正/">比赛订正</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/比赛订正/" style="font-size: 15px;">比赛订正</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/08/20/8-20比赛 T3解题报告/">8-20比赛 T3解题报告</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/20/8-20比赛 T1解题报告/">8-20比赛 T1解题报告</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/20/8-20比赛 T2解题报告/">8-20比赛 T2解题报告</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/19/8-19比赛 T1题解报告/">8-19比赛 T1解题报告</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/19/8-19比赛 T2解题报告/">8-19比赛 T2解题报告</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 BilyHurington<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!--script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
